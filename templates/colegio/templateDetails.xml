@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
+<install version="1.5" type="template">
+	<name>colegio</name>
+	<creationDate>22 de Agosto de 2013</creationDate>
+	<author>Susana</author>
+	<version>1.0</version>
+	<description>Plantilla para el colegio</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>css/bootstrap.min.css</filename>
+		<filename>css/bootstrap-theme.css</filename>
+		<filename>css/colegio.css</filename>
+		<filename>mod_mainmenu/default.php</filename>
+		<filename>mod_search/default.php</filename>
+	</files>
+	<positions>
+		<position>top</position>
+		<position>user1</position>
+		<position>user2</position>
+	</positions>
+	<params>
+	</params>
+</install>

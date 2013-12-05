@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.5.0" type="module">
+	<name>Nivo Slider</name>
+	<author>Susana E. Tejerina Guerra</author>
+	<creationDate>November 2013</creationDate>
+	<copyright>Joomla!</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>ssn_yio@hotmail.com</authorEmail>
+	<version>1.5.1</version>
+	<description>
+		Permite incluir galerias de imagenes usando Nivo Slider.
+	</description>
+	<files>
+		<filename module="mod_nivoslider">mod_nivoslider.php</filename>
+		<filename>helper.php</filename>
+		<filename>mod_nivoslider.xml</filename>
+		<filename>es-ES.mod_nivoslider.ini</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>scripts/jquery.nivo.slider.pack.js</filename>
+	</files>
+	<languages>
+		<language tag="es-ES">es-ES.mod_nivoslider.ini</language>
+	</languages>
+	<params>
+		<param type="text" description="DESCCARPETAIMAGENES" label="CARPETA IMAGENES" default="" size="50" name="carpeta"/>
+		<param type="textarea" description="DESCIMAGENES" label="IMAGENES" default="" name="imagenes" rows="4" cols="50"/>
+	</params>
+</install>

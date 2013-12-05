@@ -1,0 +1,8 @@
+body {
+	background-color: #ddd;
+}
+
+header.principal {
+	background: url(../images/fondo.jpg) no-repeat 50% 50%;
+	height: 150px;
+}
