@@ -27,14 +27,14 @@ $document->addScript(JRoute::_('templates/' . $this->template . '/js/bootstrap.m
 	
 	<body>
 		
-		<div class="container">
-		
-			<nav class="navbar navbar-default" role="navigation">
-				
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			
+			<div class="container">
+			
 				<div class="navbar-brand">
 					<a href="#">Colegio</a>
 				</div>
-
+	
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon-bar"></span>
@@ -48,10 +48,15 @@ $document->addScript(JRoute::_('templates/' . $this->template . '/js/bootstrap.m
 					<div class="navbar-form navbar-right">
 						<jdoc:include type="modules" name="user1"/>
 					</div>
-
+	
 				</div>
-			</nav>
 			
+			</div>
+			
+		</nav>
+
+		<div class="container">
+		
 			<jdoc:include type="modules" name="user2"/>
 					
 			<jdoc:include type="component" />

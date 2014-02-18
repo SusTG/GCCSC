@@ -11,8 +11,11 @@
 		<filename>css/bootstrap.min.css</filename>
 		<filename>css/bootstrap-theme.css</filename>
 		<filename>css/colegio.css</filename>
-		<filename>mod_mainmenu/default.php</filename>
-		<filename>mod_search/default.php</filename>
+		<filename>html/mod_mainmenu/default.php</filename>
+		<filename>html/mod_search/default.php</filename>
+		<filename>html/com_content/article/default.php</filename>
+		<filename>html/com_content/section/blog.php</filename>
+		<filename>html/com_content/section/blog_item.php</filename>
 	</files>
 	<positions>
 		<position>top</position>

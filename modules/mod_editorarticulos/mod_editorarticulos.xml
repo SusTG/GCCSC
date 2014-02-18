@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.5.0" type="module">
+	<name>Nivo Slider</name>
+	<author>Susana E. Tejerina Guerra</author>
+	<creationDate>Febrero 2014</creationDate>
+	<copyright>Joomla!</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>ssn_yio@hotmail.com</authorEmail>
+	<version>1.5.1</version>
+	<description>
+		Modifica articulos
+	</description>
+	<files>
+		<filename module="mod_editorarticulos">mod_nivoslider.php</filename>
+
+	</files>
+	<languages>
+		<language tag="es-ES">es-ES.mod_nivoslider.ini</language>
+	</languages>
+	<params>
+	</params>
+</install>

@@ -1,8 +1,22 @@
 body {
-	background-color: #ddd;
+	/*background-color: #ddd;*/
+	padding-top: 100px;
+}
+
+.navbar {
+	padding-top: 7px;
 }
 
 header.principal {
 	background: url(../images/fondo.jpg) no-repeat 50% 50%;
 	height: 150px;
+}
+
+.blog-item .iconos {
+	float: right;
+}
+
+.blog-item .fecha {
+	font-size: 0.8em;
+	text-align: right;
 }
