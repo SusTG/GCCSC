@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<install version="1.5.0" type="module">
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
 	<name>Nivo Slider</name>
 	<author>Susana E. Tejerina Guerra</author>
 	<creationDate>November 2013</creationDate>
-	<copyright>Joomla!</copyright>
-	<license>GNU/GPL</license>
 	<authorEmail>ssn_yio@hotmail.com</authorEmail>
 	<version>1.5.1</version>
 	<description>
@@ -21,8 +19,27 @@
 	<languages>
 		<language tag="es-ES">es-ES.mod_nivoslider.ini</language>
 	</languages>
-	<params>
-		<param type="text" description="DESCCARPETAIMAGENES" label="CARPETA IMAGENES" default="" size="50" name="carpeta"/>
-		<param type="textarea" description="DESCIMAGENES" label="IMAGENES" default="" name="imagenes" rows="4" cols="50"/>
-	</params>
-</install>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					type="text"
+					name="carpeta"
+					label="CARPETA IMAGENES"
+					size="50"
+					default=""
+					description="DESCCARPETAIMAGENES"
+					/>
+				<field
+					type="textarea"
+					name="imagenes"
+					label="IMAGENES"
+					rows="4"
+					cols="50"
+					description="DESCIMAGENES"
+					default=""
+					/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

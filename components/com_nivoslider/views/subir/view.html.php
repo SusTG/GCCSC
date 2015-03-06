@@ -11,7 +11,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.application.component.view');
  
 
-class NoticiasViewNueva extends JViewLegacy
+class NivosliderViewSubir extends JViewLegacy
 {
     function display($tpl = null)
     {

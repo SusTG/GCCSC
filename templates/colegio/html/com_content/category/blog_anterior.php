@@ -2,6 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 $cparams =& JComponentHelper::getParams('com_media');
 ?>
+
 <?php if ($this->params->get('show_page_title')) : ?>
 <div class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
 	<?php echo $this->escape($this->params->get('page_title')); ?>
@@ -24,10 +25,12 @@ $cparams =& JComponentHelper::getParams('com_media');
 	<?php for ($i = $this->pagination->limitstart; $i < ($this->pagination->limitstart + $this->params->get('num_leading_articles')); $i++) : ?>
 		<?php if ($i >= $this->total) : break; endif; ?>
 
-		<?php
-			$this->item =& $this->getItem($i, $this->params);
-			echo $this->loadTemplate('item');
-		?>
+        <div class="panel panel-default blog-item">
+    		<?php
+    			$this->item =& $this->getItem($i, $this->params);
+    			echo $this->loadTemplate('item');
+    		?>
+		</div>
 
 	<?php endfor; ?>
 
@@ -38,31 +41,32 @@ $cparams =& JComponentHelper::getParams('com_media');
 	$numIntroArticles = $startIntroArticles + $this->params->get('num_intro_articles', 4);
 	if (($numIntroArticles != $startIntroArticles) && ($i < $this->total)) :
 ?>
-	<?php
-		$filas = (int) ($this->params->get('num_intro_articles', 4) / $this->params->get('num_columns'));
-		$columnas = $this->params->get('num_columns');
-		$colClase = (int)12 / $columnas;
-		for ($fila = 0; $fila < $filas; $fila++):
-	?>
-		<div class="row">
-			<?php
-				for ($columna = 0; $columna < $columnas; $columna++):
-			?>
-				<div class="col-md-<?php echo $colClase?>">
-					<?php
-						$this->item =& $this->getItem($i, $this->params);
-						echo $this->loadTemplate('item');
-						$i++;
-					?>
-				</div>
-			<?php
-				endfor;
-			?>
-		</div>
-	<?php
-		endfor;
-	?>
-
+        <div class="misma-altura-md">
+    	<?php
+    		$filas = (int) ($this->params->get('num_intro_articles', 4) / $this->params->get('num_columns'));
+    		$columnas = $this->params->get('num_columns');
+    		$colClase = (int)12 / $columnas;
+    		for ($fila = 0; $fila < $filas; $fila++):
+    	?>
+    		<div class="row">
+    			<?php
+    				for ($columna = 0; $columna < $columnas; $columna++):
+    			?>
+    				<div class="col-md-<?php echo $colClase?> col panel panel-default blog-item">
+    					<?php
+    						$this->item =& $this->getItem($i, $this->params);
+    						echo $this->loadTemplate('item');
+    						$i++;
+    					?>
+    				</div>
+    			<?php
+    				endfor;
+    			?>
+    		</div>
+    	<?php
+    		endfor;
+    	?>
+        </div>
 <?php endif; ?>
 <?php if ($this->params->def('num_links', 4) && ($i < $this->total)) : ?>
 
@@ -83,3 +87,6 @@ $cparams =& JComponentHelper::getParams('com_media');
 		<?php echo $this->pagination->getPagesCounter(); ?>
 
 <?php endif; ?>
+
+
+

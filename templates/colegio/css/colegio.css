@@ -1,16 +1,70 @@
-body {
-	/*background-color: #ddd;*/
-	padding-top: 100px;
+
+@media (min-width: 768px) {
+	body {
+		padding-top: 100px;
+	}
 }
 
-.navbar {
-	padding-top: 7px;
+
+/** BARRA DE NAVEGACIÓN **/
+
+.navbar-default {
+	background: #ffffff;
+	border: 1px solid #e7e7e7;
 }
+
+.navbar-toggle .icon-bar{
+	background-color: #888;
+}
+
+.navbar-fixed-top {
+	padding-top: 5px;
+	background-color: #FFFFFF;	
+}
+
+@media (max-width: 767px) {
+
+	.navbar-fixed-top {
+		position: static;
+	}
+
+	.navbar-collapse {
+		max-height: none;
+	}
+}
+
+.navbar div.navbar-brand {
+	padding: 0 20px;	
+}
+
+.navbar .navbar-brand span {
+	display: block;
+}
+
+.navbar .navbar-brand span {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.navbar .navbar-brand span.pequeno {
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.navbar .input-group .btn {
+	height: 34px;
+}
+
+.navbar .search {
+	width: 14em;
+} 
 
 header.principal {
 	background: url(../images/fondo.jpg) no-repeat 50% 50%;
 	height: 150px;
 }
+
+/** BLOG **/
 
 .blog-item .iconos {
 	float: right;
@@ -19,4 +73,219 @@ header.principal {
 .blog-item .fecha {
 	font-size: 0.8em;
 	text-align: right;
+}
+
+.link-mas {
+	text-align: right;
+	padding-bottom: 1em;
+}
+
+/** FORMULARIOS **/
+	
+form .panel-heading h1 {
+	margin: 0;
+	font-size: 2em;
+}
+
+form .panel-heading .botones {
+	float: right;
+}
+
+form .panel-footer {
+	text-align: right;
+}
+
+form .has-error div.error {
+	font-weight: bold;
+	color: #b94a48;
+}
+
+.botones,
+.checkbox {
+	text-align: right;
+}
+
+.checkbox label {
+	display: inline-block;
+}
+
+.formlogin {
+	display:none;
+	background: white;
+	padding: 10px;
+	font-size: 0.9em;
+	z-index: 1000;
+}
+
+@media (min-width: 768px) {
+
+	.formlogin {
+		position:absolute;
+		top: 70px;
+		right: 10px;
+		width: 275px;
+		border: 1px solid #e7e7e7;
+		border-radius: 4px;
+		box-shadow: 0 0 6px 1px #f0f0f0;
+	}
+
+}
+
+/*		Calendario		*/
+
+.lateral-cabecera table{
+	margin: auto !important;	
+}
+
+/*		Columnas misma altura		*/
+
+.misma-altura-md .col {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+@media (min-width: 992px) {
+
+	.misma-altura-md {
+	    display:table;
+	    padding-left:0px;
+	    padding-right:0px;
+	    border-spacing: 15px;
+	    border-collapse: separate;
+	    width: 1170px;
+	    margin-left: -15px;
+	}
+	.misma-altura-md .row {
+	    display:table-row;
+	}
+	.misma-altura-md .row:before,
+	.misma-altura-md .row:after {
+		content: none;
+	}
+	
+	.misma-altura-md .col {
+	    display:table-cell;
+	    float:none;
+	}
+}
+
+/** CALENDARIO **/
+
+#flatcal_minical td.flatcal_todaycell a,
+#flatcal_minical td.flatcal_daycell a,
+#flatcal_minical td.flatcal_sundaycell a {
+	font-size: 1.5em !important;
+}
+
+/** PAGINACION **/
+div.bloque-paginacion {
+	text-align: center;
+}
+
+/** PANELES **/
+	
+.panel-heading {
+	min-height: 2.7em;
+}
+
+.panel-heading h2 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	float: left;
+}
+
+.panel {
+	position: relative;
+}
+
+.panel-body {
+	margin-bottom: 35px;
+}
+
+.panel-body:before,
+.panel-body:after {
+	display: none;
+}
+
+.panel-body .fecha {
+	color: #666;
+	font-size: .8em;
+	text-align: right;
+	margin-bottom: 1em;
+}
+
+.panel-body p.readmore {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0 10px 10px 0;
+}
+
+.panel-footer .pager {
+	margin: 0;
+}
+
+.modificar-imagen-nivoslider {
+	height: 196px;
+	width: 848px;
+	margin: auto;
+}
+
+.modificar-imagen-nivoslider .botonera {
+	overflow: visible;
+	text-align: right;
+	height: 0;
+	position: relative;
+	top: 10px;
+	right: 10px;
+}
+
+.cabecera-imagenes-nivoslider h2 {
+	float: left;
+	margin: 0;
+}
+
+.cabecera-imagenes-nivoslider {
+	text-align: right;
+	overflow: auto;
+	margin: 20px 0;
+}
+
+.contenedor-nivoslider {
+	position: relative;
+}
+
+.contenedor-nivoslider .links-nivoslider {
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+}
+
+.adjunto {
+	text-align: right;
+	margin-bottom: 1em;
+	position: relative;
+	top: -1em;
+	font-size: .85em;
+}
+
+.adjunto a:before {
+	content: "\e142";
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 17px;
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-collapse.in {
+	overflow-y: visible !important;
 }

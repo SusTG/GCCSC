@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install type="component" version="1.5.0">
+<extension type="component" version="3.3" method="upgrade">
  <name>Noticias</name>
  <creationDate>2014-Febrero</creationDate>
  <author>Susana E. Tejerina Guerra</author>
@@ -18,9 +18,13 @@
   <filename>controller.php</filename>
   <filename>views/nueva/view.html.php</filename>
   <filename>views/nueva/tmpl/default.php</filename>
+  <filename>views/modifica/view.html.php</filename>
+  <filename>views/modifica/tmpl/default.php</filename>
+  <filename>models/modifica.php</filename>
   <filename>models/noticia.php</filename>
+  <filename>models/nueva.php</filename>
  </files>
  
  <administration>
  </administration>
-</install>
+</extension>

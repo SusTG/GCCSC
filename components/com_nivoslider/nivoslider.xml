@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.3" method="upgrade">
+ <name>Nivoslider</name>
+ <creationDate>2014-Octubre</creationDate>
+ <author>Susana E. Tejerina Guerra</author>
+ <authorEmail>ssn_yio@hotmail.com</authorEmail>
+ <copyright>Copyright Info</copyright>
+ <license>License Info</license>
+ 
+<version>1.01</version>
+
+ <description>
+	Añade imagenes al carrusel de la página.
+ </description>
+ 
+ <files>
+  <filename>router.php</filename>
+  <filename>nivoslider.php</filename>
+  <filename>controller.php</filename>
+  <filename>views/subir/view.html.php</filename>
+  <filename>views/subir/tmpl/default.php</filename>
+  <filename>models/subir.php</filename>
+  <filename>views/modificar/view.html.php</filename>
+  <filename>views/modificar/tmpl/default.php</filename>
+  <filename>models/modificar.php</filename>
+  <filename>models/borrar.php</filename>
+  <filename>models/subir.php</filename>
+ </files>
+ 
+ <administration>
+ </administration>
+</extension>

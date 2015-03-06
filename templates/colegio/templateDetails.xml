@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/template-install.dtd">
-<install version="1.5" type="template">
+<extension version="3.3" type="template">
 	<name>colegio</name>
 	<creationDate>22 de Agosto de 2013</creationDate>
 	<author>Susana</author>
 	<version>1.0</version>
 	<description>Plantilla para el colegio</description>
+	<languages>
+		<language tag="es-ES">language/es-ES/es-ES.tpl_colegio.ini</language>
+    </languages>
 	<files>
 		<filename>index.php</filename>
-		<filename>css/bootstrap.min.css</filename>
-		<filename>css/bootstrap-theme.css</filename>
 		<filename>css/colegio.css</filename>
-		<filename>html/mod_mainmenu/default.php</filename>
+		<filename>css/bootstrap.min.css</filename>
+		<filename>css/bootstrap-theme.min.css</filename>
+		<filename>fonts/glyphicons-halflings-regular.eot</filename>
+		<filename>fonts/glyphicons-halflings-regular.svg</filename>
+		<filename>fonts/glyphicons-halflings-regular.ttf</filename>
+		<filename>fonts/glyphicons-halflings-regular.woff</filename>
+		<filename>js/bootstrap.min.js</filename>
+		<filename>js/jquery-1.9.0.min.js</filename>
+		<filename>html/mod_menu/default.php</filename>
+		<filename>html/mod_menu/default_component.php</filename>
 		<filename>html/mod_search/default.php</filename>
 		<filename>html/com_content/article/default.php</filename>
-		<filename>html/com_content/section/blog.php</filename>
-		<filename>html/com_content/section/blog_item.php</filename>
+		<filename>html/com_content/category/blog.php</filename>
+		<filename>html/com_content/category/blog_item.php</filename>
+		<filename>html/com_content/category/blog_item_anterior.php</filename>
+		<filename>html/com_content/category/blog_anterior.php</filename>
+		<filename>html/com_content/category/blog_children.php</filename>
+		<filename>html/mod_login/default.php</filename>
+		<filename>html/layouts/joomla/content/readmore.php</filename>
+		<filename>language/es-ES/es-ES.tpl_colegio.ini</filename>
 	</files>
 	<positions>
 		<position>top</position>
 		<position>user1</position>
 		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
 	</positions>
-	<params>
-	</params>
-</install>
+</extension>

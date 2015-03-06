@@ -1,51 +1,97 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
-<h1><?php echo $this->greeting; ?></h1>
 
-<form class="form-horizontal" role="form" method="post" action="<?php echo JRoute::_('index.php?option=com_noticias'); ?>">
-	<input type="hidden" name="task" value="crear" />
-	<div class="form-group">
-		<label for="titulo" class="col-sm-2 control-label">Título</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="titulo" placeholder="Titulo de la notícia">
-			<span class="help-block">Título de la noticia a añadir.</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="resumen" class="col-sm-2 control-label">Resumen</label>
-		<div class="col-sm-10">
-			<textarea class="form-control" id="resumen" placeholder="Breve descripción de la noticia"></textarea>
-			<span class="help-block">Breve descripción de la noticia, que se utilizará en el listado de noticias.</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="imagen" class="col-sm-2 control-label">Imagen</label>
-		<div class="col-sm-10">
-			<input type="file" id="imagen" />
-			<span class="help-block">Imagen de la noticia. Se mostrará al acceder a los detalles de la misma (opcional).</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="pie_imagen" class="col-sm-2 control-label">Pie de la imagen</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="pie_imagen" placeholder="Pie de la imagen de la noticia">
-			<span class="help-block">Pie que se mostrará con la imagen de la noticia.</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="adjunto" class="col-sm-2 control-label">Adjunto</label>
-		<div class="col-sm-10">
-			<input type="file" id="imagen" />
-			<span class="help-block">Fichero para adjuntar con la noticia (opcional).</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="contenido" class="col-sm-2 control-label">Contenido</label>
-		<div class="col-sm-10">
-			<textarea class="form-control" rows="10" id="resumen" placeholder="Contenido de la noticia"></textarea>
-			<span class="help-block">Texto con el contenido completo de la noticia. Se mostrará al acceder a los detalles de la misma.</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<input type="submit" value="Enviar" />
-	</div>
+<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="<?php echo JRoute::_('index.php?option=com_noticias'); ?>">
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <div class="botones">
+                <input type="reset" value="Limpiar" class="btn btn-default" />
+                <input type="submit" value="Enviar" class="btn btn-primary" />
+            </div>
+            <h1>Crear una noticia</h1>
+        </div>
+
+        <div class="panel-body">
+        	<input type="hidden" name="task" value="crear" />
+        	<div class="form-group <?php echo $this->modelo->hasError('titulo') ? 'has-error' : ''; ?>">
+        		<label for="titulo" class="col-sm-2 control-label">Título</label>
+        		<div class="col-sm-10">
+        			<input type="text" class="form-control" id="titulo" placeholder="Titulo de la notícia" name="titulo" value="<?php echo $this->modelo->getTitulo(); ?>">
+        			<span class="help-block">Título de la noticia a añadir.</span>
+                    <?php if ($this->modelo->hasError('titulo')): ?>
+                        <div class="error"><?php echo $this->modelo->getError('titulo'); ?></div>
+                    <?php endif; ?>
+        		</div>
+        	</div>
+        	<div class="form-group <?php echo $this->modelo->hasError('resumen') ? 'has-error' : ''; ?>">
+        		<label for="resumen" class="col-sm-2 control-label">Resumen</label>
+        		<div class="col-sm-10">
+        			<textarea class="form-control" id="resumen" placeholder="Breve descripción de la noticia" name="resumen"><?php echo $this->modelo->getResumen(); ?></textarea>
+        			<span class="help-block">Breve descripción de la noticia, que se utilizará en el listado de noticias.</span>
+        		    <?php if ($this->modelo->hasError('resumen')): ?>
+        		        <div class="error"><?php echo $this->modelo->getError('resumen'); ?></div>
+        		    <?php endif; ?>
+        		</div>
+        	</div>
+        	<div id="imagenes">
+        	    <div id="imagen-base" class="imagen <?php echo $this->modelo->hasError('imagen') ? 'has-error' : ''; ?>">
+                	<div class="form-group">
+                		<label for="imagen" class="col-sm-2 control-label">Imagen</label>
+                		<div class="col-sm-10">
+                			<input type="file" id="imagen" name="imagen[]" />
+                			<span class="help-block">Imagen de la noticia. Se mostrará al acceder a los detalles de la misma (opcional).</span>
+                            <?php if ($this->modelo->hasError('imagen')): ?>
+                                <div class="error"><?php echo $this->modelo->getError('imagen'); ?></div>
+                            <?php endif; ?>
+                		</div>
+                	</div>
+                	<div class="form-group">
+                		<label for="pie_imagen" class="col-sm-2 control-label">Pie de la imagen</label>
+                		<div class="col-sm-10">
+                			<input type="text" class="form-control" id="pie_imagen" placeholder="Pie de la imagen de la noticia" name="pie-imagen[]">
+                			<span class="help-block">Pie que se mostrará con la imagen de la noticia.</span>
+                		</div>
+                	</div>
+            	</div>
+                <div class="link-mas">
+                    <a href="#" id="aniadir-imagen">Mas</a>
+                </div>
+        	</div>
+        	<script>
+        	    jQuery(function () {
+        	        jQuery('#aniadir-imagen').click(function(e) {
+        	           e.preventDefault();
+        	           jQuery('#imagen-base')
+        	               .clone()
+        	                   .appendTo(jQuery('#imagenes'));
+        	        });
+        	    });
+        	</script>
+        	<div class="form-group">
+        		<label for="adjunto" class="col-sm-2 control-label">Adjunto</label>
+        		<div class="col-sm-10 <?php echo $this->modelo->hasError('adjunto') ? 'has-error' : ''; ?>">
+        			<input type="file" id="adjunto" name="adjunto" />
+        			<span class="help-block">Fichero para adjuntar con la noticia (opcional).</span>
+                    <?php if ($this->modelo->hasError('adjunto')): ?>
+                        <div class="error"><?php echo $this->modelo->getError('adjunto'); ?></div>
+                    <?php endif; ?>
+        		</div>
+        	</div>
+        	<div class="form-group <?php echo $this->modelo->hasError('contenido') ? 'has-error' : ''; ?>">
+        		<label for="contenido" class="col-sm-2 control-label">Contenido</label>
+        		<div class="col-sm-10">
+        			<textarea class="form-control" rows="10" id="resumen" placeholder="Contenido de la noticia" name="contenido"><?php echo $this->modelo->getContenido(); ?></textarea>
+        			<span class="help-block">Texto con el contenido completo de la noticia. Se mostrará al acceder a los detalles de la misma.</span>
+                    <?php if ($this->modelo->hasError('contenido')): ?>
+                        <div class="error"><?php echo $this->modelo->getError('contenido'); ?></div>
+                    <?php endif; ?>
+        		</div>
+        	</div>
+        </div>
+        <div class="panel-footer">
+            <input type="reset" value="Limpiar" class="btn btn-default" />
+            <input type="submit" value="Enviar" class="btn btn-primary" />
+        </div>
+    </div>
 </form>

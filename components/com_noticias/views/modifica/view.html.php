@@ -11,7 +11,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.application.component.view');
  
 
-class NoticiasViewNueva extends JViewLegacy
+class NoticiasViewModifica extends JViewLegacy
 {
     function display($tpl = null)
     {
@@ -21,7 +21,7 @@ class NoticiasViewNueva extends JViewLegacy
         else {
             $this->assignRef("modelo", $this->getModel());
         }
- 
+
         parent::display($tpl);
     }
 }

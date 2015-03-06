@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" version="3.1.0" client="site" method="upgrade">
+	<name>Colegio comun</name>
+	<libraryname>colegiocomun</libraryname>
+	<author>Susana E. Tejerina Guerra</author>
+	<creationDate>October 2014</creationDate>
+	<authorEmail>ssn_yio@hotmail.com</authorEmail>
+	<version>1.0</version>
+	<description>
+		Clases de utilidad comunes para todas las extensiones del colegio.
+	</description>
+	<files>
+		<filename>imagen.php</filename>
+	</files>
+</extension>
